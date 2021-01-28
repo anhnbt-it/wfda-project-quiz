@@ -4,7 +4,7 @@ import { QuizDashboardComponent } from './views/layout/quiz-dashboard/quiz-dashb
 import { QuizFormComponent } from './views/layout/quiz-form/quiz-form.component';
 import { QuizTableComponent } from './views/layout/quiz-table/quiz-table.component';
 import { LoginComponent } from './views/login/login.component';
-import { Layout_loginComponent } from './views/layout_login.component';
+import { LayoutLoginComponent } from './views/layout-login.component';
 import { LayoutComponent } from './views/layout/layout.component';
 import { AssignmentsHistoryComponent } from './views/assignments-history/assignments-history.component';
 import { AssignmentsDetailComponent } from './views/assignments-detail/assignments-detail.component';
@@ -27,7 +27,7 @@ const routes: Routes = [
   },
   {
     path: 'user',
-    component: Layout_loginComponent,
+    component: LayoutLoginComponent,
     children: [
       {
         path: 'login',

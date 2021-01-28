@@ -25,7 +25,7 @@ import { QuizDashboardComponent } from './views/layout/quiz-dashboard/quiz-dashb
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { Layout_loginComponent } from './views/layout_login.component';
+import { LayoutLoginComponent } from './views/layout-login.component';
 import { LoginComponent } from './views/login/login.component';
 import { AssignmentsHistoryComponent } from './views/assignments-history/assignments-history.component';
 import { AssignmentsDetailComponent } from './views/assignments-detail/assignments-detail.component';
@@ -39,7 +39,7 @@ import { DetailGroupComponent } from './views/detail-group/detail-group.componen
     QuizTableComponent,
     QuizDashboardComponent,
     DetailGroupComponent,
-    Layout_loginComponent,
+    LayoutLoginComponent,
     LoginComponent,
     AssignmentsHistoryComponent,
     AssignmentsDetailComponent
