@@ -32,6 +32,7 @@ import { AssignmentsHistoryComponent } from './views/assignments-history/assignm
 import { AssignmentsDetailComponent } from './views/assignments-detail/assignments-detail.component';
 import { DetailGroupComponent } from './views/detail-group/detail-group.component';
 import { FormatTimePipe } from './format-time.pipe';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { FormatTimePipe } from './format-time.pipe';
     MatGridListModule,
     MatMenuModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

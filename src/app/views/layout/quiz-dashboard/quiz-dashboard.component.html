@@ -58,8 +58,9 @@
         <ng-container matColumnDef="action">
             <th mat-header-cell *matHeaderCellDef> Action</th>
             <td mat-cell *matCellDef="let element">
-                <a mat-raised-button (click)="showDetail(element.position)">Detail
-          <span class="material-icons">preview</span> </a> |
+                <button mat-raised-button (click)="showDetail(element.position)"
+                matTooltip="Detail" #tooltip="matTooltip">Detail
+          <span class="material-icons">preview</span> </button> |
                 <a mat-raised-button color="warn">Leave
           <span class="material-icons">keyboard_tab</span></a>
             </td>
