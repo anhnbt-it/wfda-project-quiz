@@ -24,6 +24,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { QuizDashboardComponent } from './layout/quiz-dashboard/quiz-dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
+import { AssignmentsHistoryComponent } from './views/assignments-history/assignments-history.component';
+import { AssignmentsDetailComponent } from './views/assignments-detail/assignments-detail.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { MatMenuModule } from '@angular/material/menu';
     LayoutComponent,
     QuizFormComponent,
     QuizTableComponent,
-    QuizDashboardComponent
+    QuizDashboardComponent,
+    AssignmentsHistoryComponent,
+    AssignmentsDetailComponent
   ],
   imports: [
     BrowserModule,
