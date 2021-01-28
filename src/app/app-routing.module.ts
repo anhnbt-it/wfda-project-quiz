@@ -4,6 +4,7 @@ import { QuizDashboardComponent } from './views/layout/quiz-dashboard/quiz-dashb
 import { QuizFormComponent } from './views/layout/quiz-form/quiz-form.component';
 import { QuizTableComponent } from './views/layout/quiz-table/quiz-table.component';
 import { LoginComponent } from './views/login/login.component';
+import { RegisterComponent } from './views/register/register.component';
 import { LayoutLoginComponent } from './views/layout-login.component';
 import { LayoutComponent } from './views/layout/layout.component';
 import { AssignmentsHistoryComponent } from './views/assignments-history/assignments-history.component';
@@ -32,6 +33,10 @@ const routes: Routes = [
       {
         path: 'login',
         component: LoginComponent
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
       }
     ]
   }

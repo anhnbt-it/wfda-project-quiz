@@ -7,9 +7,8 @@ import {ActivatedRoute, Route, Router} from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-email?: string;
-password?: string;
-
+    email?: string;
+    password?: string;
 list = [
   {
     email: 'a',
@@ -20,19 +19,17 @@ list = [
     password: '1'
   }
 ];
-  constructor(private router: Router,
-              private route: ActivatedRoute) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-    // this.email = this.route.snapshot.queryParamMap.ge;
-    this.password = '0';
+    this.email =  '';
+    this.password = '';
     console.log(this.list);
 
   }
 
   login(): void {
     console.log('asdfgh');
-    // tslint:disable-next-line:triple-equals
     for (let u of this.list) {
       if (this.email === u.email && this.password === u.password) {
         this.router.navigate(['/main/dashboard']);
@@ -44,8 +41,4 @@ list = [
     }
   }
 
-  register(): void{
-    // @ts-ignore
-    this.router.navigate(['/register']);
-  }
 }

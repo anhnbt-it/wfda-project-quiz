@@ -8,7 +8,7 @@
           <div>
             <mat-form-field class="mat-card-center">
                 <mat-label>Email</mat-label>
-                <input matInput placeholder="Email" type="text" name="email" [(ngModel)]="email">
+                <input matInput placeholder="Email" type="text" name="email" [(ngModel)]= "email">
             </mat-form-field>
           </div>
           <div>
@@ -21,7 +21,7 @@
         </form>
   <mat-card-actions class="text-center">
     <button mat-raised-button (click)="login()" color="primary">LOGIN</button>
-    <button mat-raised-button (click)="register()" color="primary">REGISTER</button>
+    <p>chua co tai khoan: <a routerLink="/register">Register</a></p>
   </mat-card-actions>
     </mat-card-content>
 </mat-card>
