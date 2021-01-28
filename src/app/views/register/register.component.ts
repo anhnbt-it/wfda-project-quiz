@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -7,25 +8,25 @@ import {Router} from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  user = {
-  email: '',
-  password: ''
-};
-  repassword?: '';
+  myForm?: FormGroup;
   list?: any[];
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.list = [];
+    this.myForm = this.fb.group({
+      username: [' ', Validators.required],
+      password: [' ', Validators.required],
+      age: [' ', Validators.required],
+      address: [' ', Validators.required],
+      email: [' ', Validators.required],
+      image: [' ', Validators.required],
+      dob: [' ', Validators.required],
+    });
   }
 
   register(): void{
-    if (this.user.password === this.repassword) {
-      this.list?.push(this.user);
-      console.log(this.list);
-      // @ts-ignore
-      this.router.navigate([''], this.user);
-    }
+    console.log(this.myForm?.value);
   }
 
 }
