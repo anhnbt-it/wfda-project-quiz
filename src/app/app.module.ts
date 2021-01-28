@@ -16,7 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { QuizTableComponent } from './layout/quiz-table/quiz-table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -24,6 +24,10 @@ import { MatSortModule } from '@angular/material/sort';
 import { QuizDashboardComponent } from './layout/quiz-dashboard/quiz-dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
+import {Layout_loginComponent} from "./views/layout_login.component";
+import {LoginComponent} from "./views/login/login.component";
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { RegisterComponent } from './views/register/register.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,10 @@ import { MatMenuModule } from '@angular/material/menu';
     LayoutComponent,
     QuizFormComponent,
     QuizTableComponent,
-    QuizDashboardComponent
+    QuizDashboardComponent,
+    Layout_loginComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +59,9 @@ import { MatMenuModule } from '@angular/material/menu';
     MatPaginatorModule,
     MatSortModule,
     MatGridListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatFormFieldModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,11 +3,34 @@ import { Routes, RouterModule } from '@angular/router';
 import { QuizDashboardComponent } from './layout/quiz-dashboard/quiz-dashboard.component';
 import { QuizFormComponent } from './layout/quiz-form/quiz-form.component';
 import { QuizTableComponent } from './layout/quiz-table/quiz-table.component';
+import {LoginComponent} from "./views/login/login.component";
+import {Layout_loginComponent} from "./views/layout_login.component";
+import {LayoutComponent} from "./layout/layout.component";
+import {RegisterComponent} from "./views/register/register.component";
 
 const routes: Routes = [
-  { path: 'dashboard', component: QuizDashboardComponent },
-  { path: 'form', component: QuizFormComponent },
-  { path: 'table', component: QuizTableComponent }
+  {
+    path: 'main',
+    component: LayoutComponent,
+    children: [
+      { path: 'dashboard', component: QuizDashboardComponent },
+      { path: 'form', component: QuizFormComponent },
+      { path: 'table', component: QuizTableComponent }
+    ]},
+  {
+    path: '',
+    component: Layout_loginComponent,
+    children: [
+      {
+        path: '',
+        component: LoginComponent
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
+      }
+    ]
+  }
 ];
 
 @NgModule({
