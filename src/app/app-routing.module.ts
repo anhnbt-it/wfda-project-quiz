@@ -6,10 +6,9 @@ import { QuizTableComponent } from './views/layout/quiz-table/quiz-table.compone
 import { LoginComponent } from './views/login/login.component';
 import { Layout_loginComponent } from './views/layout_login.component';
 import { LayoutComponent } from './views/layout/layout.component';
-import { RegisterComponent } from './views/register/register.component';
-import { AssignmentsHistoryComponent } from "./views/assignments-history/assignments-history.component";
-import { AssignmentsDetailComponent } from "./views/assignments-detail/assignments-detail.component";
-import {DetailGroupComponent} from './layout/detail-group/detail-group.component';
+import { AssignmentsHistoryComponent } from './views/assignments-history/assignments-history.component';
+import { AssignmentsDetailComponent } from './views/assignments-detail/assignments-detail.component';
+import { DetailGroupComponent } from './layout/detail-group/detail-group.component';
 
 
 const routes: Routes = [
@@ -33,10 +32,6 @@ const routes: Routes = [
       {
         path: 'login',
         component: LoginComponent
-      },
-      {
-        path: 'register',
-        component: RegisterComponent
       }
     ]
   }
