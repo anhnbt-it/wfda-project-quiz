@@ -41,8 +41,4 @@ list = [
     }
   }
 
-  register(): void{
-    // @ts-ignore
-    this.router.navigate(['/register']);
-  }
 }
