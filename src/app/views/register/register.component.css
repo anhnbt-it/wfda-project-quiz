@@ -2,9 +2,11 @@
     margin: 30px;
 }
 
-.mat-card-center {
-    display: flex;
-    justify-content: center;
+.example-card {
+  max-width: 400px;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
 }
 
 .text-center {

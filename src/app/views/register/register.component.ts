@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -8,8 +8,20 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  myForm!: FormGroup;
+
+  // Init default value
+  myForm: FormGroup = new FormGroup({
+    username: new FormControl(''),
+    password: new FormControl(''),
+    age: new FormControl(''),
+    address: new FormControl(''),
+    email: new FormControl(''),
+    image: new FormControl(''),
+    dob: new FormControl('')
+  });
+
   list?: any[];
+
   constructor(
     private router: Router,
     private fb: FormBuilder
@@ -17,18 +29,18 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
-      username: [' ', Validators.required],
-      password: [' ', Validators.required],
-      age: [' ', Validators.required],
-      address: [' ', Validators.required],
-      email: [' ', Validators.required],
-      image: [' ', Validators.required],
-      dob: [' ', Validators.required],
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+      age: ['', Validators.required],
+      address: ['', Validators.required],
+      email: ['', Validators.required],
+      image: ['', Validators.required],
+      dob: ['', Validators.required],
     });
   }
 
-  register(): void{
-    console.log(this.myForm?.value);
+  onSubmit(): void{
+    console.log(this.myForm.value);
   }
 
 }
