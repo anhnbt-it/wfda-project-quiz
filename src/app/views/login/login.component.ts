@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Route, Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -20,12 +20,14 @@ list = [
     password: '1'
   }
 ];
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.email = '';
+    // this.email = this.route.snapshot.queryParamMap.ge;
     this.password = '0';
     console.log(this.list);
+
   }
 
   login(): void {
