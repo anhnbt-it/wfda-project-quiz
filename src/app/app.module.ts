@@ -27,6 +27,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { LayoutLoginComponent } from './views/layout-login.component';
 import { LoginComponent } from './views/login/login.component';
+import { RegisterComponent } from './views/register/register.component';
 import { AssignmentsHistoryComponent } from './views/assignments-history/assignments-history.component';
 import { AssignmentsDetailComponent } from './views/assignments-detail/assignments-detail.component';
 import { DetailGroupComponent } from './views/detail-group/detail-group.component';
@@ -41,6 +42,7 @@ import { DetailGroupComponent } from './views/detail-group/detail-group.componen
     DetailGroupComponent,
     LayoutLoginComponent,
     LoginComponent,
+    RegisterComponent,
     AssignmentsHistoryComponent,
     AssignmentsDetailComponent
   ],
