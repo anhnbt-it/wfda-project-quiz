@@ -26,6 +26,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { DetailGroupComponent } from './layout/detail-group/detail-group.component';
 import {RouterModule} from '@angular/router';
+import { ExamComponent } from './layout/exam/exam.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {RouterModule} from '@angular/router';
     QuizFormComponent,
     QuizTableComponent,
     QuizDashboardComponent,
-    DetailGroupComponent
+    DetailGroupComponent,
+    ExamComponent
   ],
   imports: [
     BrowserModule,
