@@ -7,6 +7,8 @@ import { LoginComponent } from './views/login/login.component';
 import { Layout_loginComponent } from './views/layout_login.component';
 import { LayoutComponent } from './views/layout/layout.component';
 import { RegisterComponent } from './views/register/register.component';
+import { AssignmentsHistoryComponent } from "./views/assignments-history/assignments-history.component";
+import { AssignmentsDetailComponent } from "./views/assignments-detail/assignments-detail.component";
 
 const routes: Routes = [
   {
@@ -16,6 +18,8 @@ const routes: Routes = [
       { path: 'home', component: QuizDashboardComponent },
       { path: 'form', component: QuizFormComponent },
       { path: 'table', component: QuizTableComponent },
+      { path: 'assignments-history', component: AssignmentsHistoryComponent },
+      { path: 'assignments-detail', component: AssignmentsDetailComponent }
     ]
   },
   {

@@ -28,6 +28,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { Layout_loginComponent } from './views/layout_login.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
+import { AssignmentsHistoryComponent } from './views/assignments-history/assignments-history.component';
+import { AssignmentsDetailComponent } from './views/assignments-detail/assignments-detail.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,9 @@ import { RegisterComponent } from './views/register/register.component';
     Layout_loginComponent,
     LoginComponent,
     RegisterComponent
+    QuizDashboardComponent,
+    AssignmentsHistoryComponent,
+    AssignmentsDetailComponent
   ],
   imports: [
     BrowserModule,
