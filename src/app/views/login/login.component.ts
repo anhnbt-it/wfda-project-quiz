@@ -7,10 +7,8 @@ import {ActivatedRoute, Route, Router} from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  user: any = {
-    email: '',
-    password: ''
-  };
+    email?: string;
+    password?: string;
 list = [
   {
     email: 'a',
@@ -24,8 +22,8 @@ list = [
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.user = this.router.getCurrentNavigation()?.extras.state;
-    this.list.push(this.user);
+    this.email =  '';
+    this.password = '';
     console.log(this.list);
 
   }
@@ -33,7 +31,7 @@ list = [
   login(): void {
     console.log('asdfgh');
     for (let u of this.list) {
-      if (this.user.email === u.email && this.user.password === u.password) {
+      if (this.email === u.email && this.password === u.password) {
         this.router.navigate(['/main/dashboard']);
         return;
       } else {
