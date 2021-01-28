@@ -8,25 +8,42 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 email?: string;
-password?: number;
+password?: string;
+
+list = [
+  {
+    email: 'a',
+    password: '1'
+  },
+  {
+    email: 's',
+    password: '1'
+  }
+];
   constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.email = '';
-    this.password = 0;
+    this.password = '0';
+    console.log(this.list);
   }
 
   login(): void {
     console.log('asdfgh');
     // tslint:disable-next-line:triple-equals
-    if (this.email == 'user' && this.password == 123){
-      this.router.navigate(['/main/dashboard']);
-    }else {
-      alert('tach');
+    for (let u of this.list) {
+      if (this.email === u.email && this.password === u.password) {
+        this.router.navigate(['/main/dashboard']);
+        return;
+      } else {
+        alert('tach');
+        return;
+      }
     }
   }
 
   register(): void{
+    // @ts-ignore
     this.router.navigate(['/register']);
   }
 }
