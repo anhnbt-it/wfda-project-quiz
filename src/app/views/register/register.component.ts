@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -11,8 +11,8 @@ export class RegisterComponent implements OnInit {
   email: '',
   password: ''
 };
-  repassword: '';
-  list: any[];
+  repassword?: '';
+  list?: any[];
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -21,12 +21,10 @@ export class RegisterComponent implements OnInit {
 
   register(): void{
     if (this.user.password === this.repassword) {
-      this.list.push(this.user);
+      this.list?.push(this.user);
       console.log(this.list);
-      for (let u of this.list){
-        console.log(u);
-      }
-      this.router.navigate([''],this.user);
+      // @ts-ignore
+      this.router.navigate([''], this.user);
     }
   }
 
