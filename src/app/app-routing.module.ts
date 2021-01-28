@@ -9,6 +9,8 @@ import { LayoutComponent } from './views/layout/layout.component';
 import { RegisterComponent } from './views/register/register.component';
 import { AssignmentsHistoryComponent } from "./views/assignments-history/assignments-history.component";
 import { AssignmentsDetailComponent } from "./views/assignments-detail/assignments-detail.component";
+import {DetailGroupComponent} from './layout/detail-group/detail-group.component';
+
 
 const routes: Routes = [
   {
@@ -19,7 +21,9 @@ const routes: Routes = [
       { path: 'form', component: QuizFormComponent },
       { path: 'table', component: QuizTableComponent },
       { path: 'assignments-history', component: AssignmentsHistoryComponent },
-      { path: 'assignments-detail', component: AssignmentsDetailComponent }
+      { path: 'assignments-detail', component: AssignmentsDetailComponent },
+      { path: 'detail-group', component: DetailGroupComponent,
+      }
     ]
   },
   {

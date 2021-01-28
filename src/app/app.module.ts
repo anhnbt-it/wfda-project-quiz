@@ -30,6 +30,7 @@ import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { AssignmentsHistoryComponent } from './views/assignments-history/assignments-history.component';
 import { AssignmentsDetailComponent } from './views/assignments-detail/assignments-detail.component';
+import { DetailGroupComponent } from './layout/detail-group/detail-group.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { AssignmentsDetailComponent } from './views/assignments-detail/assignmen
     QuizFormComponent,
     QuizTableComponent,
     QuizDashboardComponent,
+    DetailGroupComponent,
     Layout_loginComponent,
     LoginComponent,
     RegisterComponent,
