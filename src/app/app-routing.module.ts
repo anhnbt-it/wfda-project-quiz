@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'form', component: QuizFormComponent },
   { path: 'table', component: QuizTableComponent },
   { path: 'assignments-history', component: AssignmentsHistoryComponent },
-  { path: 'assignments-detail', component: AssignmentsDetailComponent }
+  { path: 'assignments-detail/:id', component: AssignmentsDetailComponent }
 ];
 
 @NgModule({

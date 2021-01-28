@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {QuizTableDataSource, QuizTableItem} from '../../layout/quiz-table/quiz-table-datasource';
+import {Router} from '@angular/router';
 
 
 const ELEMENT_DATA: any = [
@@ -12,23 +13,18 @@ const ELEMENT_DATA: any = [
   templateUrl: './assignments-history.component.html',
   styleUrls: ['./assignments-history.component.css']
 })
-export class AssignmentsHistoryComponent implements AfterViewInit, OnInit {
+export class AssignmentsHistoryComponent implements  OnInit {
   displayedColumns: string[] = ['id', 'name', 'action'];
   dataSource: any;
+  id = 0;
   // @ts-ignore
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
     this.dataSource = ELEMENT_DATA;
-  }
-
-  // tslint:disable-next-line:typedef
-  ngAfterViewInit() {
-    // @ts-ignore
-    this.table.dataSource = this.dataSource;
   }
 
 }
