@@ -25,8 +25,8 @@ import { QuizDashboardComponent } from './views/layout/quiz-dashboard/quiz-dashb
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { Layout_loginComponent } from "./views/layout_login.component";
-import { LoginComponent } from "./views/login/login.component";
+import { Layout_loginComponent } from './views/layout_login.component';
+import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 
 @NgModule({
