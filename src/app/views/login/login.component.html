@@ -4,14 +4,18 @@
 <mat-card class="my-card">
     <mat-card-content>
         <form class="my-form">
+          <p>
             <mat-form-field class="full-width">
                 <mat-label>Email</mat-label>
                 <input matInput placeholder="Email" name="email">
             </mat-form-field>
+          </p>
+          <p>
             <mat-form-field class="full-width">
                 <mat-label>Password</mat-label>
                 <input matInput placeholder="Password" name="password">
             </mat-form-field>
+          </p>
         </form>
     </mat-card-content>
     <button mat-raised-button (click)="login()" color="primary">LOGIN</button>
