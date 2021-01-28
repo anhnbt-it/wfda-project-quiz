@@ -31,6 +31,7 @@ import { RegisterComponent } from './views/register/register.component';
 import { AssignmentsHistoryComponent } from './views/assignments-history/assignments-history.component';
 import { AssignmentsDetailComponent } from './views/assignments-detail/assignments-detail.component';
 import { DetailGroupComponent } from './views/detail-group/detail-group.component';
+import { FormatTimePipe } from './format-time.pipe';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { DetailGroupComponent } from './views/detail-group/detail-group.componen
     LoginComponent,
     RegisterComponent,
     AssignmentsHistoryComponent,
-    AssignmentsDetailComponent
+    AssignmentsDetailComponent,
+    FormatTimePipe
   ],
   imports: [
     BrowserModule,
