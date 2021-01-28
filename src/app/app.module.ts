@@ -24,6 +24,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { QuizDashboardComponent } from './layout/quiz-dashboard/quiz-dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
+import { DetailGroupComponent } from './layout/detail-group/detail-group.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { MatMenuModule } from '@angular/material/menu';
     LayoutComponent,
     QuizFormComponent,
     QuizTableComponent,
-    QuizDashboardComponent
+    QuizDashboardComponent,
+    DetailGroupComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatPaginatorModule,
     MatSortModule,
     MatGridListModule,
-    MatMenuModule
+    MatMenuModule,
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
