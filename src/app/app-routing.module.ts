@@ -7,11 +7,12 @@ import {LoginComponent} from './views/login/login.component';
 import {LayoutComponent} from './views/layout/layout.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/quiz/dashboard', pathMatch: 'full' },
   {
-    path: '',
+    path: 'quiz',
     component: LayoutComponent,
     children: [
-      { path: 'home', component: QuizDashboardComponent },
+      { path: 'dashboard', component: QuizDashboardComponent },
       { path: 'form', component: QuizFormComponent },
       { path: 'table', component: QuizTableComponent },
     ]

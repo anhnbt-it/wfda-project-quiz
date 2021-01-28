@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { LocalStorageService } from './../localStorage/local-storage.service';
+import { LocalStorageService } from '../localStorage/local-storage.service';
 import { Observable } from 'rxjs';
 
 
@@ -10,39 +10,44 @@ import { Observable } from 'rxjs';
 })
 
 export class ApiService {
-  constructor(public httpClient: HttpClient, public localStorageService: LocalStorageService) { }
 
-  get = (url) => {
-    return this.httpClient.get(url);
+
+  constructor(
+    private http: HttpClient,
+    private localStorageService: LocalStorageService
+  ) { }
+
+  get = (url: string) => {
+    return this.http.get(url);
   }
 
-  post = (url, data) => {
-    return this.httpClient.post(url, data);
+  post = (url: string, data: any) => {
+    return this.http.post(url, data);
   }
 
-  postWithToken = (url, data): Observable<any> => {
-    let user = this.localStorageService.get('employee');
-    let token = user ? user['token'] : null;
+  postWithToken = (url: string, data: any): Observable<any> => {
+    const user = this.localStorageService.get('student');
+    const token = user ? user.token : null;
     let headers = new HttpHeaders();
     headers = headers.set('Authorization', `Bearer ${token}`);
-    return this.httpClient.post(url, data, { headers });
+    return this.http.post(url, data, { headers });
   }
 
-  getWithToken = (url): Observable<any> => {
-    let user = this.localStorageService.get('employee');
-    let token = user ? user['token'] : null;
+  getWithToken = (url: string): Observable<any> => {
+    const user = this.localStorageService.get('student');
+    const token = user ? user.token : null;
     let headers = new HttpHeaders();
     headers = headers.set('Authorization', `Bearer ${token}`);
-    return this.httpClient.get(url, { headers });
+    return this.http.get(url, { headers });
   }
 
-  uploadFileWithToken = (url, file): Observable<any> => {
-    let user = this.localStorageService.get('employee');
-    let token = user ? user['token'] : null;
+  uploadFileWithToken = (url: string, file: string | Blob): Observable<any> => {
+    const user = this.localStorageService.get('student');
+    const token = user ? user.token : null;
     let headers = new HttpHeaders();
     headers = headers.set('Authorization', `Bearer ${token}`);
-    let form = new FormData();
+    const form = new FormData();
     form.append('file', file);
-    return this.httpClient.post(url, form, { headers });
+    return this.http.post(url, form, { headers });
   }
 }

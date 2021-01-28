@@ -16,6 +16,11 @@
   z-index: 1;
 }
 
+a.nav-link {
+  margin: 0 4px;
+  cursor: pointer;
+}
+
 .example-spacer {
   flex: 1 1 auto;
 }

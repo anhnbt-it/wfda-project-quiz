@@ -6,12 +6,15 @@ import { Injectable } from '@angular/core';
 
 export class LocalStorageService {
   get = (key: string) => {
-    let value = localStorage.getItem(key);
-    try {
-      return JSON.parse(value);
-    } catch (e) {
-      return value;
+    const value = localStorage.getItem(key);
+    if (value !== null) {
+      try {
+        return JSON.parse(value);
+      } catch (e) {
+        return null;
+      }
     }
+    return null;
   }
 
   set = (key: string, value: any) => {
@@ -19,7 +22,7 @@ export class LocalStorageService {
       localStorage.setItem(key, JSON.stringify(value));
     } else {
       localStorage.setItem(key, value);
-    }    
+    }
   }
 
   delete = (key: string) => {

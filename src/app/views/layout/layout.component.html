@@ -2,9 +2,9 @@
     <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
         <mat-toolbar>Menu</mat-toolbar>
         <mat-nav-list>
-            <a mat-list-item routerLink="/home"><span class="material-icons">home</span> Home</a>
-            <a mat-list-item routerLink="/form">Form</a>
-            <a mat-list-item routerLink="/table">Table</a>
+            <a mat-list-item routerLinkActive="active" routerLink="/quiz/dashboard"><span class="material-icons">home</span> Home</a>
+            <a mat-list-item routerLinkActive="active" routerLink="/quiz/form">Form</a>
+            <a mat-list-item routerLinkActive="active" routerLink="/quiz/table">Table</a>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
@@ -14,8 +14,19 @@
             </button>
             <span>{{ title }}</span>
           <span class="example-spacer"></span>
-          <a class="mat-button" routerLink="/sign-up">Sign up</a>
-          <a class="mat-button" routerLink="/login">Sign in</a>
+          <button mat-stroked-button (click)="openSnackBar('Sorry, Please do Login first', 'Close')">Show snack-bar</button>
+          <a mat-stroked-button routerLink="/login" class="nav-link">
+            <span class="material-icons">login</span> <span>Login</span>
+          </a>
+          <button mat-stroked-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            Tuan Anh
+            <span class="material-icons">keyboard_arrow_down</span>
+          </button>
+          <mat-menu #menu="matMenu">
+            <a mat-menu-item (click)="logout()">
+              <span>Logout</span>
+            </a>
+          </mat-menu>
         </mat-toolbar>
         <router-outlet></router-outlet>
     </mat-sidenav-content>
