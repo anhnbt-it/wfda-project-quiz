@@ -8,10 +8,13 @@ export class LocalStorageService {
   get = (key: string) => {
     let value = localStorage.getItem(key);
     try {
-      return JSON.parse(value);
+      if (value != null) {
+        return JSON.parse(value);
+      }
     } catch (e) {
       return value;
     }
+    return null
   }
 
   set = (key: string, value: any) => {

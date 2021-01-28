@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
- 
 import { LocalStorageService } from './../localStorage/local-storage.service';
 import { ApiService } from './../api/api.service'; 
 import { API_URL } from '../../constants/configs';
@@ -12,7 +10,10 @@ import { API_URL } from '../../constants/configs';
 
 export class AuthService {
 
-  constructor(private localStorageService: LocalStorageService, public httpClient: HttpClient, public apiService: ApiService) { }
+  constructor(
+    private localStorageService: LocalStorageService,
+    private httpClient: HttpClient,
+    public apiService: ApiService) { }
 
   login = (username: string, password: string): Promise<Object> => {
     return new Promise((resolve, reject) => {
@@ -38,7 +39,7 @@ export class AuthService {
     return false;
   }
 
-  saveLocal = (employee) => {
+  saveLocal = (employee: any) => {
     this.localStorageService.set('employee', employee);
   }
 
@@ -51,7 +52,7 @@ export class AuthService {
     return user ? user['token'] : null;
   }
 
-  changePassword = (oldPassword, newPassword, confirmPassword, id) => {
+  changePassword = (oldPassword: any, newPassword: any, confirmPassword: any, id: any) => {
     return new Promise((resolve, reject) => {
       let url = `${API_URL}user/change-password`;
       this.apiService.postWithToken(url, { oldPassword, newPassword, confirmPassword, id })
