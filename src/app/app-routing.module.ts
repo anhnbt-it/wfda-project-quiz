@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { QuizDashboardComponent } from './views/layout/quiz-dashboard/quiz-dashboard.component';
-import { QuizFormComponent } from './views/layout/quiz-form/quiz-form.component';
-import { QuizTableComponent } from './views/layout/quiz-table/quiz-table.component';
-import {LoginComponent} from './views/login/login.component';
-import {LayoutComponent} from './views/layout/layout.component';
+import { QuizDashboardComponent } from './layout/quiz-dashboard/quiz-dashboard.component';
+import { QuizFormComponent } from './layout/quiz-form/quiz-form.component';
+import { QuizTableComponent } from './layout/quiz-table/quiz-table.component';
+import { LoginComponent } from "./views/login/login.component";
+import { Layout_loginComponent } from "./views/layout_login.component";
+import { LayoutComponent } from "./layout/layout.component";
+import { RegisterComponent } from "./views/register/register.component";
 
 const routes: Routes = [
   {
@@ -17,8 +19,18 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'login',
-    component: LoginComponent
+    path: 'user',
+    component: Layout_loginComponent,
+    children: [
+      {
+        path: 'login',
+        component: LoginComponent
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
+      }
+    ]
   }
 ];
 
