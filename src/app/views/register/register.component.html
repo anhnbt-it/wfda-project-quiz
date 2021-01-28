@@ -1,0 +1,34 @@
+<div class="container mat-card-center">
+  <mat-card>
+    <h1 class="text-center">Register</h1>
+    <mat-card-content>
+      <p class="text-center">Enter your email and password</p>
+      <form class="my-form">
+        <mat-card-content class="mat-dialog-content">
+          <div>
+            <mat-form-field class="mat-card-center">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Email" type="text" name="email" [(ngModel)]="user.email">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="mat-card-center">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="Password" type="text" name="password" [(ngModel)]="user.password">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="mat-card-center">
+              <mat-label>Repeat Password</mat-label>
+              <input matInput placeholder="Repeat Password" type="text" name="repassword" [(ngModel)]="repassword">
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+      </form>
+      <mat-card-actions class="text-center">
+        <button mat-raised-button (click)="register()" color="primary">REGISTER </button>
+        <p>da co tai khoan: <a routerLink="/user/login">Login</a></p>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+</div>

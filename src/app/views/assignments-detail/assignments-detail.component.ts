@@ -3,8 +3,11 @@ import {ActivatedRoute} from '@angular/router';
 
 const ELEMENT_DATA: any = [
   {id: 1, name: 'Hydrogen'},
-  {id: 2, name: 'Hydrogen'}, {id: 2, name: 'Hydrogen'},
-  {id: 2, name: 'Hydrogen'}, {id: 2, name: 'Hydrogen'}, {id: 2, name: 'Hydrogen'},
+  {id: 2, name: 'Hydrogen'},
+  {id: 2, name: 'Hydrogen'},
+  {id: 2, name: 'Hydrogen'},
+  {id: 2, name: 'Hydrogen'},
+  {id: 2, name: 'Hydrogen'},
 ];
 
 @Component({
@@ -12,6 +15,7 @@ const ELEMENT_DATA: any = [
   templateUrl: './assignments-detail.component.html',
   styleUrls: ['./assignments-detail.component.css']
 })
+
 export class AssignmentsDetailComponent implements OnInit {
   dataSource: any;
   idA = 0;
@@ -22,22 +26,16 @@ export class AssignmentsDetailComponent implements OnInit {
     });
   }
 
-
-  // @ts-ignore
-  findAsissgById( id ) {
-    // tslint:disable-next-line:prefer-for-of
-    for (let i = 0; i < ELEMENT_DATA.length; i++) {
-      // tslint:disable-next-line:triple-equals
-      if (ELEMENT_DATA[i].id == this.idA) {
-this.dataSource = ELEMENT_DATA[i];
+  findById(id: number ): void {
+    for (const item of ELEMENT_DATA) {
+      if (item.id === this.idA) {
+        this.dataSource = item;
       }
-
     }
   }
 
-  // @ts-ignore
   ngOnInit(): void {
-    this.findAsissgById(this.idA);
+    this.findById(this.idA);
   }
 
 }
