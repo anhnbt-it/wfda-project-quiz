@@ -8,7 +8,7 @@ import { Layout_loginComponent } from './views/layout_login.component';
 import { LayoutComponent } from './views/layout/layout.component';
 import { AssignmentsHistoryComponent } from './views/assignments-history/assignments-history.component';
 import { AssignmentsDetailComponent } from './views/assignments-detail/assignments-detail.component';
-import { DetailGroupComponent } from './layout/detail-group/detail-group.component';
+import { DetailGroupComponent } from './views/detail-group/detail-group.component';
 
 
 const routes: Routes = [
