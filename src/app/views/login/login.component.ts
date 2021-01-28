@@ -32,7 +32,7 @@ list = [
     console.log('asdfgh');
     for (let u of this.list) {
       if (this.email === u.email && this.password === u.password) {
-        this.router.navigate(['/main/dashboard']);
+        this.router.navigate(['/home']);
         return;
       } else {
         alert('tach');
