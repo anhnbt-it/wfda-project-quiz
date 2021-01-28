@@ -1,10 +1,9 @@
 <div class="grid-container">
-  <h1 class="mat-h1">Group</h1>
-
+  <h1 class="mat-h1">
+    Group
+    <a mat-raised-button routerLink="/home"><span class="material-icons">keyboard_backspace</span> Back to dashboard</a>
+  </h1>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
 
     <!-- Position Column -->
     <ng-container matColumnDef="position">
@@ -43,4 +42,3 @@
   </table>
 
 </div>
-<button mat-raised-button (click)="back()"><span class="material-icons">keyboard_backspace</span>Back to dashboard</button>
