@@ -40,8 +40,7 @@ import { AssignmentsDetailComponent } from './views/assignments-detail/assignmen
     QuizDashboardComponent,
     Layout_loginComponent,
     LoginComponent,
-    RegisterComponent
-    QuizDashboardComponent,
+    RegisterComponent,
     AssignmentsHistoryComponent,
     AssignmentsDetailComponent
   ],
