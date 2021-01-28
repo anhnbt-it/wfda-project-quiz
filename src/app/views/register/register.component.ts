@@ -8,10 +8,12 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  myForm?: FormGroup;
+  myForm!: FormGroup;
   list?: any[];
-  constructor(private router: Router,
-              private fb: FormBuilder) { }
+  constructor(
+    private router: Router,
+    private fb: FormBuilder
+  ) { }
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
