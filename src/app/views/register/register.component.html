@@ -11,7 +11,7 @@
     <mat-card-content>
       <mat-form-field appearance="outline" class="example-full-width">
         <mat-label>Email *</mat-label>
-        <input matInput placeholder="Email" type="text" formControlName="email">
+        <input matInput placeholder="Email" type="email" formControlName="email">
         <mat-error *ngIf="hasError('email', 'required')">Email is required</mat-error>
         <mat-error *ngIf="hasError('email', 'email')">Email k dung mau</mat-error>
       </mat-form-field>
@@ -26,14 +26,14 @@
 
       <mat-form-field appearance="outline" class="example-full-width">
         <mat-label>Password *</mat-label>
-        <input matInput placeholder="Password" type="text" formControlName="password">
+        <input matInput placeholder="Password" type="password" formControlName="password">
         <mat-error *ngIf="hasError('password', 'required')">Password is required</mat-error>
         <mat-error *ngIf="hasError('password', 'minlength')">Password k it hon 6 ki tu</mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="example-full-width">
         <mat-label>Age *</mat-label>
-        <input matInput placeholder="Age" type="text" formControlName="age">
+        <input matInput placeholder="Age" type="number" formControlName="age">
         <mat-error *ngIf="hasError('age', 'required')">Age is required</mat-error>
         <mat-error *ngIf="hasError('age', 'min')">Age lon hon 15</mat-error>
         <mat-error *ngIf="hasError('age', 'max')">Age nho hon 55</mat-error>
@@ -51,7 +51,7 @@
 
       <mat-form-field appearance="outline" class="example-full-width">
         <mat-label>Dob</mat-label>
-        <input matInput placeholder="Dob" type="text" formControlName="dob">
+        <input matInput placeholder="Dob" type="date" formControlName="dob">
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions class="text-center">
