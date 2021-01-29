@@ -10,7 +10,7 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class LayoutComponent implements OnInit, OnDestroy {
 
-  title = 'Quiz';
+  title = 'C0820K1 - Quiz Project';
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
       map(result => result.matches),
