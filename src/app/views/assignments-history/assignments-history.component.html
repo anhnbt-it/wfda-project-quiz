@@ -10,12 +10,20 @@
     <th mat-header-cell *matHeaderCellDef> No. </th>
     <td mat-cell *matCellDef="let element"> {{element.id}} </td>
   </ng-container>
-
+    <ng-container matColumnDef="Point">
+      <th mat-header-cell *matHeaderCellDef> Score </th>
+      <td mat-cell *matCellDef="let element"> {{element.point}}% </td>
+    </ng-container>
   <!-- Name Column -->
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Name </th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  <ng-container matColumnDef="Exam Name">
+    <th mat-header-cell *matHeaderCellDef> Exam name </th>
+    <td mat-cell *matCellDef="let element"> {{element.exam.examName}} </td>
   </ng-container>
+    <ng-container matColumnDef="Start Time">
+      <th mat-header-cell *matHeaderCellDef> Start Time </th>
+      <td mat-cell *matCellDef="let element"> {{element.startTime | date:'dd/mm/yyyy hh: mm'}} </td>
+    </ng-container>
+
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef> action </th>
 <td mat-cell *matCellDef="let row">

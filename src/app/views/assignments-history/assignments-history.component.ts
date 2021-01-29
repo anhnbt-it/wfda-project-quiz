@@ -1,6 +1,8 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {QuizTableDataSource, QuizTableItem} from '../../layout/quiz-table/quiz-table-datasource';
+import { Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {AssignmentService} from '../../containers/service/api/assignment.service';
+import {getLocaleFirstDayOfWeek} from "@angular/common";
+
 
 
 const ELEMENT_DATA: any = [
@@ -14,17 +16,18 @@ const ELEMENT_DATA: any = [
   styleUrls: ['./assignments-history.component.css']
 })
 export class AssignmentsHistoryComponent implements  OnInit {
-  displayedColumns: string[] = ['id', 'name', 'action'];
+  displayedColumns: string[] = ['id',  'Point', 'Exam Name', 'Start Time' , 'action' ] ;
   dataSource: any;
-  id = 0;
+  id = 1;
   // @ts-ignore
 
-  constructor(private router: Router) {
+  constructor(private service: AssignmentService) {
   }
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
-    this.dataSource = ELEMENT_DATA;
+    this.service.getAll(this.id).subscribe((data) => this.dataSource = data);
+
   }
 
 }

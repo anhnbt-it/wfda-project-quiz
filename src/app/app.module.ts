@@ -31,6 +31,8 @@ import { RegisterComponent } from './views/register/register.component';
 import { AssignmentsHistoryComponent } from './views/assignments-history/assignments-history.component';
 import { AssignmentsDetailComponent } from './views/assignments-detail/assignments-detail.component';
 import { DetailGroupComponent } from './views/detail-group/detail-group.component';
+import {AssignmentService} from "./containers/service/api/assignment.service";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -67,9 +69,10 @@ import { DetailGroupComponent } from './views/detail-group/detail-group.componen
     MatGridListModule,
     MatMenuModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AssignmentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
