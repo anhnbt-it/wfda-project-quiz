@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit, Pipe } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable, Subscription, timer } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-layout',
@@ -22,6 +23,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
+    private titleService: Title
   ) {}
 
   logout(): void {
@@ -29,6 +31,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
     console.log('Logout');
   }
   ngOnInit(): void {
+    this.titleService.setTitle(this.title);
     this.countDown = timer(0, this.tick).subscribe(() => {
       --this.counter;
       if (this.counter <= 0) {

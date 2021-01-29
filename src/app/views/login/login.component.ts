@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Route, Router} from '@angular/router';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-login',
@@ -7,22 +8,29 @@ import {ActivatedRoute, Route, Router} from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-    email?: string;
-    password?: string;
-list = [
-  {
-    email: 'a',
-    password: '1'
-  },
-  {
-    email: 's',
-    password: '1'
+  title = 'Sign In';
+  email?: string;
+  password?: string;
+  list = [
+    {
+      email: 'a',
+      password: '1'
+    },
+    {
+      email: 's',
+      password: '1'
+    }
+  ];
+
+  constructor(
+    private router: Router,
+    private titleService: Title
+  ) {
   }
-];
-  constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.email =  '';
+    this.titleService.setTitle(this.title);
+    this.email = '';
     this.password = '';
     console.log(this.list);
 

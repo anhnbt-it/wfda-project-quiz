@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-register',
@@ -8,6 +9,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  title = 'Create an account';
 
   // Init default value
   myForm: FormGroup = new FormGroup({
@@ -24,10 +26,12 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private titleService: Title
   ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle(this.title);
     this.myForm = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(3), Validators.pattern('^[a-zA-Z]*[0-9]*$')]],
       password: ['', [Validators.required, Validators.minLength(6)]],
