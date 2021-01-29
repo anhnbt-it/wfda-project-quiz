@@ -1,0 +1,12 @@
+.container {
+    margin: 30px;
+}
+
+.mat-card-center {
+    display: flex;
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
