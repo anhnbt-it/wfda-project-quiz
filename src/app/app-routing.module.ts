@@ -15,10 +15,10 @@ import { DetailGroupComponent } from './views/detail-group/detail-group.componen
 const routes: Routes = [
   { path: '', redirectTo: '/user/login', pathMatch: 'full' },
   {
-    path: 'quiz',
+    path: '',
     component: LayoutComponent,
     children: [
-      { path: 'dashboard', component: QuizDashboardComponent },
+      { path: 'home', component: QuizDashboardComponent },
       { path: 'form', component: QuizFormComponent },
       { path: 'table', component: QuizTableComponent },
       { path: 'assignments-history', component: AssignmentsHistoryComponent },
