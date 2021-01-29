@@ -41,7 +41,7 @@ export class DetailGroupComponent implements OnInit {
     this.router.navigate(['dashboard']);
   }
 
-  exam(){
-
+  starExam(id: number): void {
+    this.router.navigate(['exam'], {queryParams: {id}});
   }
 }

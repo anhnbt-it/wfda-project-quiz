@@ -24,6 +24,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { QuizDashboardComponent } from './views/layout/quiz-dashboard/quiz-dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
+import {RouterModule} from '@angular/router';
+import { ExamComponent } from './views/exam/exam.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { LayoutLoginComponent } from './views/layout-login.component';
 import { LoginComponent } from './views/login/login.component';
@@ -41,6 +43,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     QuizFormComponent,
     QuizTableComponent,
     QuizDashboardComponent,
+    DetailGroupComponent,
+    ExamComponent,
     DetailGroupComponent,
     LayoutLoginComponent,
     LoginComponent,
