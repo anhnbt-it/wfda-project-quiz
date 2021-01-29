@@ -15,17 +15,17 @@ import {ResultExamComponent} from './views/result-exam/result-exam.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/user/login', pathMatch: 'full' },
+  {path: '', redirectTo: '/user/login', pathMatch: 'full'},
   {
     path: '',
     component: LayoutComponent,
     children: [
-      { path: 'home', component: QuizDashboardComponent },
-      { path: 'form', component: QuizFormComponent },
-      { path: 'table', component: QuizTableComponent },
-      { path: 'assignments-history', component: AssignmentsHistoryComponent },
-      { path: 'assignments-detail/:id', component: AssignmentsDetailComponent },
-      { path: 'detail-group', component: DetailGroupComponent,
+      {path: 'home', component: QuizDashboardComponent},
+      {path: 'form', component: QuizFormComponent},
+      {path: 'table', component: QuizTableComponent},
+      {path: 'assignments-history', component: AssignmentsHistoryComponent},
+      {path: 'assignments-detail/:id', component: AssignmentsDetailComponent},
+      {path: 'detail-group', component: DetailGroupComponent},
       {path: 'exam', component: ExamComponent},
       {path: 'result-exam', component: ResultExamComponent},
     ]
@@ -50,4 +50,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
