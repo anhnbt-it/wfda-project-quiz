@@ -11,6 +11,7 @@ import {LayoutComponent} from './views/layout/layout.component';
 import {AssignmentsHistoryComponent} from './views/assignments-history/assignments-history.component';
 import {AssignmentsDetailComponent} from './views/assignments-detail/assignments-detail.component';
 import {DetailGroupComponent} from './views/detail-group/detail-group.component';
+import {ResultExamComponent} from './views/result-exam/result-exam.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
       {path: 'assignments-detail', component: AssignmentsDetailComponent},
       {path: 'detail-group', component: DetailGroupComponent},
       {path: 'exam', component: ExamComponent},
+      {path: 'result-exam', component: ResultExamComponent},
     ]
   },
   {

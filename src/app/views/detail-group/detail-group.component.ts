@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {GroupService} from '../../containers/service/group.service';
 
 export interface PeriodicElement {
   name: string;
@@ -31,7 +32,6 @@ export class DetailGroupComponent implements OnInit {
   dataSource = ELEMENT_DATA;
 
   constructor(private router: Router) {
-
   }
 
   ngOnInit(): void {
