@@ -19,7 +19,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { QuizDashboardComponent } from './views/layout/quiz-dashboard/quiz-dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { ExamComponent } from './views/exam/exam.component';
@@ -32,12 +31,12 @@ import { AssignmentsDetailComponent } from './views/assignments-detail/assignmen
 import { DetailGroupComponent } from './views/detail-group/detail-group.component';
 import { FormatTimePipe } from './format-time.pipe';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { HomeComponent } from './views/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
-    QuizDashboardComponent,
     DetailGroupComponent,
     ExamComponent,
     DetailGroupComponent,
@@ -46,7 +45,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     RegisterComponent,
     AssignmentsHistoryComponent,
     AssignmentsDetailComponent,
-    FormatTimePipe
+    FormatTimePipe,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
