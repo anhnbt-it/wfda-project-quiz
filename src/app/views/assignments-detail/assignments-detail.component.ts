@@ -2,14 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {AssignmentService} from '../../containers/service/api/assignment.service';
 
-const ELEMENT_DATA: any = [
-  {id: 1, name: 'Hydrogen'},
-  {id: 2, name: 'Hydrogen'},
-  {id: 2, name: 'Hydrogen'},
-  {id: 2, name: 'Hydrogen'},
-  {id: 2, name: 'Hydrogen'},
-  {id: 2, name: 'Hydrogen'},
-];
 
 @Component({
   selector: 'app-assignments-detail',
