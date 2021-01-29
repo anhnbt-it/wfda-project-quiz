@@ -1,1 +1,49 @@
-<p>exam works!</p>
+<mat-grid-list cols="4" rowHeight="100%">
+  <mat-grid-tile colspan="3">
+    <mat-grid-list cols="1">
+      <mat-card class="quiz-card">
+        <mat-card-header>
+          <mat-card-title>{{index + 1}}</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p>{{question.name}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <mat-radio-group
+            aria-labelledby="example-radio-group-label"
+            class="example-radio-group">
+            <mat-radio-button class="example-radio-button" *ngFor="let answer of this.question.answer"
+                              [value]="answer.id">
+              {{answer.name}}
+            </mat-radio-button>
+          </mat-radio-group>
+        </mat-card-actions>
+      </mat-card>
+
+      <div class="quiz-card">
+        <button mat-raised-button (click)="prevQuestion()">Prev</button>
+
+        <button *ngIf="lastQuestion; else ABC" mat-raised-button color="primary" style="margin-left: 800px"
+                (click)="nextQuestion()">Next
+        </button>
+
+        <ng-template #ABC>
+          <button mat-raised-button color="primary" (click)="resultExam()" style="margin-left: 800px">Submit</button>
+        </ng-template>
+      </div>
+    </mat-grid-list>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Quiz navigation</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <button *ngFor="let question of this.fakeExam; let i = index" mat-raised-button
+                (click)="changeQuestion(i)">{{i + 1}}</button>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
