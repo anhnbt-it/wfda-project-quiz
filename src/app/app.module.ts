@@ -33,8 +33,8 @@ import { AssignmentsDetailComponent } from './views/assignments-detail/assignmen
 import { DetailGroupComponent } from './views/detail-group/detail-group.component';
 import { FormatTimePipe } from './format-time.pipe';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import {AssignmentService} from "./containers/service/api/assignment.service";
-import {HttpClientModule} from "@angular/common/http";
+import {AssignmentService} from './containers/service/api/assignment.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -73,7 +73,7 @@ import {HttpClientModule} from "@angular/common/http";
     MatMenuModule,
     MatFormFieldModule,
     FormsModule,
-    MatTooltipModule
+    MatTooltipModule,
     FormsModule,
     HttpClientModule
   ],
