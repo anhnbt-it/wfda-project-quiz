@@ -33,6 +33,8 @@ import { AssignmentsDetailComponent } from './views/assignments-detail/assignmen
 import { DetailGroupComponent } from './views/detail-group/detail-group.component';
 import { FormatTimePipe } from './format-time.pipe';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import {AssignmentService} from "./containers/service/api/assignment.service";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -72,8 +74,10 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatFormFieldModule,
     FormsModule,
     MatTooltipModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AssignmentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

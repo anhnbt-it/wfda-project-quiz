@@ -1,8 +1,14 @@
-<mat-list role="list">
-  <mat-list-item class="font" role="listitem">Tên Bài Thi : {{dataSource.name}} 1</mat-list-item>
-  <mat-list-item class="font" role="listitem">Tên người thi : 2</mat-list-item>
-  <mat-list-item class="font" role="listitem">Item 3</mat-list-item>
-  <mat-list-item class="font" role="listitem">Item 3</mat-list-item>
-  <mat-list-item class="font" role="listitem">Item 3</mat-list-item>
-  <a routerLink="/assignments-history" mat-list-item class="font">Back to list 3</a>
-</mat-list>
+<mat-card>
+  <mat-card-content>
+    <mat-list role="list">
+      <mat-list-item class="font" role="listitem">Tên Bài Thi : {{dataSource.exam.examName}}</mat-list-item>
+      <mat-list-item class="font" role="listitem">Tên người thi : {{dataSource.user.username}}</mat-list-item>
+      <mat-list-item class="font" role="listitem">Điểm Thi : {{dataSource.point}}%</mat-list-item>
+      <mat-list-item class="font" role="listitem">Thời gian bắt đâu :  {{dataSource.startTime | date:'dd/mm/yyyy hh: mm'}}</mat-list-item>
+      <mat-list-item class="font" role="listitem">Thời gian kết thúc :  {{dataSource.startEnd | date:'dd/mm/yyyy hh: mm'}}</mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button routerLink="/assignments-history">Back to list</a>
+  </mat-card-actions>
+</mat-card>

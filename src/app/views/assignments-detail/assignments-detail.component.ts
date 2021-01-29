@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {AssignmentService} from '../../containers/service/api/assignment.service';
 
 const ELEMENT_DATA: any = [
   {id: 1, name: 'Hydrogen'},
@@ -20,21 +21,17 @@ export class AssignmentsDetailComponent implements OnInit {
   dataSource: any;
   idA = 0;
 
-  constructor(private activeRoute: ActivatedRoute) {
-    this.activeRoute.queryParams.subscribe(data => {
-      this.idA = data.id;
-    });
-  }
+  constructor(private activeRoute: ActivatedRoute, private service: AssignmentService) {}
+
 
   findById(id: number ): void {
-    for (const item of ELEMENT_DATA) {
-      if (item.id === this.idA) {
-        this.dataSource = item;
-      }
-    }
+    this.service.getById(id).subscribe((data) => this.dataSource = data);
   }
 
   ngOnInit(): void {
+
+// @ts-ignore
+    this.idA = this.activeRoute.snapshot.paramMap.get('id');
     this.findById(this.idA);
   }
 
