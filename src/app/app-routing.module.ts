@@ -13,7 +13,7 @@ import { DetailGroupComponent } from './views/detail-group/detail-group.componen
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/quiz/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/user/login', pathMatch: 'full' },
   {
     path: 'quiz',
     component: LayoutComponent,
