@@ -29,14 +29,18 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required],
-      age: ['', Validators.required],
-      address: ['', Validators.required],
-      email: ['', Validators.required],
-      image: ['', Validators.required],
-      dob: ['', Validators.required],
+      username: ['', [Validators.required, Validators.minLength(3), Validators.pattern('^[a-zA-Z]*[0-9]*$')]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      age: ['', [Validators.required, Validators.min(15), Validators.max(55)]],
+      address: [''],
+      email: ['', [Validators.required, Validators.email]],
+      image: [''],
+      dob: [''],
     });
+  }
+
+  public hasError = (controlName: string, errorName: string) => {
+    return this.myForm.controls[controlName].hasError(errorName);
   }
 
   onSubmit(): void{
