@@ -10,13 +10,8 @@ import {AssignmentsHistoryComponent} from './views/assignments-history/assignmen
 import {AssignmentsDetailComponent} from './views/assignments-detail/assignments-detail.component';
 import {DetailGroupComponent} from './views/detail-group/detail-group.component';
 
-
 const routes: Routes = [
   { path: '', redirectTo: '/user/login', pathMatch: 'full' },
-  {
-    path: 'dashboard',
-    component: QuizDashboardComponent,
-  },
   {
     path: '',
     component: LayoutComponent,
