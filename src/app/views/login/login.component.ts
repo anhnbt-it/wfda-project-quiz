@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Route, Router} from '@angular/router';
+import {UserService} from '../../containers/service/user/user.service';
 
 @Component({
   selector: 'app-login',
@@ -7,38 +8,25 @@ import {ActivatedRoute, Route, Router} from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-    email?: string;
-    password?: string;
-list = [
-  {
-    email: 'a',
-    password: '1'
-  },
-  {
-    email: 's',
-    password: '1'
-  }
-];
-  constructor(private router: Router) { }
+  user = {
+    username: '',
+    password: ''
+  };
+  constructor(private router: Router,
+              private userService: UserService) { }
 
   ngOnInit(): void {
-    this.email =  '';
-    this.password = '';
-    console.log(this.list);
-
   }
 
   login(): void {
-    console.log('asdfgh');
-    for (let u of this.list) {
-      if (this.email === u.email && this.password === u.password) {
-        this.router.navigate(['/home']);
-        return;
-      } else {
-        alert('tach');
-        return;
-      }
-    }
+    this.userService.login(this.user).subscribe(res => {
+      console.log(res);
+      this.gotoHome();
+    });
+  }
+
+  gotoHome(): void{
+    this.router.navigate(['/home']);
   }
 
 }
