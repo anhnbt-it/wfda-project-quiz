@@ -20,26 +20,26 @@ const DATAFAKE: Exam =
     questionList: [
       {
         id: 1,
-        name: 'abc',
+        name: 'What does HTML stand for?',
         answer: [
           {
             id: 1,
-            name: 'answer1',
+            name: 'Hyperlinks and Text Markup Language',
             check: true,
           },
           {
             id: 2,
-            name: 'answer2',
+            name: 'Hyper Text Markup Language',
             check: false,
           },
           {
             id: 3,
-            name: 'answer3',
+            name: 'Home Tool Markup Language',
             check: false,
           },
           {
             id: 4,
-            name: 'answer4',
+            name: 'Home Tool Markup Language',
             check: false,
           },
         ]
@@ -81,7 +81,7 @@ const DATAFAKE: Exam =
 })
 export class ExamComponent implements OnInit {
   fakeExam = DATAFAKE.questionList;
-  question: any;
+  questions: any;
   index = 0;
   lastQuestion = true;
 
@@ -89,7 +89,7 @@ export class ExamComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.question = this.fakeExam[this.index];
+    this.questions = this.fakeExam;
   }
 
   checkLast(): any {
@@ -99,7 +99,7 @@ export class ExamComponent implements OnInit {
   nextQuestion(): any {
     if (this.fakeExam.length > this.index + 1) {
       this.index++;
-      this.question = this.fakeExam[this.index];
+      this.questions = this.fakeExam[this.index];
       this.checkLast();
     }
   }
@@ -107,7 +107,7 @@ export class ExamComponent implements OnInit {
   prevQuestion(): any {
     this.index--;
     if (this.fakeExam[this.index] != null) {
-      this.question = this.fakeExam[this.index];
+      this.questions = this.fakeExam[this.index];
       this.lastQuestion = true;
     } else {
       this.index++;
@@ -115,7 +115,7 @@ export class ExamComponent implements OnInit {
   }
 
   changeQuestion(id: number): void {
-    this.question = this.fakeExam[id];
+    this.questions = this.fakeExam[id];
     this.index = id;
     this.checkLast();
   }
