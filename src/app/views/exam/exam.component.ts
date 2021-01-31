@@ -26,21 +26,25 @@ const DATAFAKE: Exam =
             id: 1,
             name: 'Hyperlinks and Text Markup Language',
             check: true,
+            qId: 1,
           },
           {
             id: 2,
             name: 'Hyper Text Markup Language',
             check: false,
+            qId: 1,
           },
           {
             id: 3,
             name: 'Home Tool Markup Language',
             check: false,
+            qId: 1,
           },
           {
             id: 4,
             name: 'Home Tool Markup Language',
             check: false,
+            qId: 1,
           },
         ]
       },
@@ -50,23 +54,57 @@ const DATAFAKE: Exam =
         answer: [
           {
             id: 1,
-            name: 'answer1',
+            name: 'answer5',
             check: true,
+            qId: 2,
           },
           {
             id: 2,
-            name: 'answer2',
+            name: 'answer6',
             check: false,
+            qId: 2,
           },
           {
             id: 3,
-            name: 'answer3',
+            name: 'answer7',
             check: false,
+            qId: 2,
           },
           {
             id: 4,
-            name: 'answer4',
+            name: 'answer8',
             check: false,
+            qId: 2,
+          },
+        ]
+      },
+      {
+        id: 3,
+        name: 'abc333',
+        answer: [
+          {
+            id: 1,
+            name: '3333',
+            check: true,
+            qId: 3,
+          },
+          {
+            id: 2,
+            name: '3333',
+            check: false,
+            qId: 3,
+          },
+          {
+            id: 3,
+            name: '3333',
+            check: false,
+            qId: 3,
+          },
+          {
+            id: 4,
+            name: '3333',
+            check: false,
+            qId: 3,
           },
         ]
       }
@@ -85,6 +123,8 @@ export class ExamComponent implements OnInit, OnDestroy {
   questions: any;
   index = 0;
   lastQuestion = true;
+  answerTS: any = null;
+  answerList: any = [];
 
 
   countDown!: Subscription;
@@ -116,6 +156,7 @@ export class ExamComponent implements OnInit, OnDestroy {
     if (this.fakeExam.length > this.index + 1) {
       this.index++;
       this.questions = this.fakeExam[this.index];
+      this.checkAnswer();
       this.checkLast();
     }
   }
@@ -124,6 +165,7 @@ export class ExamComponent implements OnInit, OnDestroy {
     this.index--;
     if (this.fakeExam[this.index] != null) {
       this.questions = this.fakeExam[this.index];
+      this.checkAnswer();
       this.lastQuestion = true;
     } else {
       this.index++;
@@ -133,14 +175,32 @@ export class ExamComponent implements OnInit, OnDestroy {
   changeQuestion(id: number): void {
     this.questions = this.fakeExam[id];
     this.index = id;
+    this.checkAnswer();
     this.checkLast();
   }
 
   resultExam(): void {
+    this.checkAnswer();
     this.router.navigate(['result-exam']);
   }
 
   ngOnDestroy(): void {
     this.countDown.unsubscribe();
+  }
+
+  checkAnswer(): any {
+    console.log(this.answerTS);
+    if (this.answerTS != null) {
+      if (!this.answerList.includes(this.answerTS) && !this.answerList.isEmpty) {
+        for (const a of this.answerList) {
+          if (a.qId === this.answerTS.qId) {
+            this.answerList.splice(this.answerList.indexOf(a), 1);
+            // this.answerList = this.answerList.filter((ele, index, arr) { return ele != this.answerTS});
+          }
+        }
+        this.answerList.push(this.answerTS);
+      }
+      console.log(this.answerList);
+    }
   }
 }
