@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {Timestamp} from 'rxjs';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Subscription, timer, Timestamp} from 'rxjs';
 import {Router} from '@angular/router';
 
 export interface Exam {
@@ -79,17 +79,33 @@ const DATAFAKE: Exam =
   templateUrl: './exam.component.html',
   styleUrls: ['./exam.component.css']
 })
-export class ExamComponent implements OnInit {
+export class ExamComponent implements OnInit, OnDestroy {
+  favoriteSeason: string | undefined;
   fakeExam = DATAFAKE.questionList;
   questions: any;
   index = 0;
   lastQuestion = true;
+
+
+  countDown!: Subscription;
+  counter = 1800; // seconds: 1800
+  tick = 1000;
 
   constructor(private router: Router) {
   }
 
   ngOnInit(): void {
     this.questions = this.fakeExam;
+    this.startCountDown();
+  }
+  startCountDown(): void {
+    this.countDown = timer(0, this.tick).subscribe(() => {
+      --this.counter;
+      if (this.counter <= 0) {
+        console.log('Stopppp.....');
+        this.countDown.unsubscribe();
+      }
+    });
   }
 
   checkLast(): any {
@@ -122,5 +138,9 @@ export class ExamComponent implements OnInit {
 
   resultExam(): void {
     this.router.navigate(['result-exam']);
+  }
+
+  ngOnDestroy(): void {
+    this.countDown.unsubscribe();
   }
 }

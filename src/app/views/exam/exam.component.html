@@ -8,21 +8,24 @@
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <p>{{question.name}}</p>
-        <mat-radio-group class="example-radio-group">
-          <mat-radio-button class="example-radio-button" *ngFor="let answer of this.question.answer"
-                            [value]="answer.id">
+        <label id="example-radio-group-label">{{question.name}}</label>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+          [(ngModel)]="favoriteSeason">
+          <mat-radio-button class="example-radio-button" *ngFor="let answer of question.answer" [value]="answer.id">
             {{answer.name}}
           </mat-radio-button>
         </mat-radio-group>
+        <div>Your favorite season is: {{favoriteSeason}}</div>
       </mat-card-content>
-      <mat-card-actions>
+      <mat-card-actions class="text-center example-button-row">
         <button *ngIf="!isFirst" mat-raised-button (click)="prevQuestion()">❮ Previous</button>
         <button *ngIf="!isLast; else ABC" mat-raised-button color="primary"
                 (click)="nextQuestion()">Next ❯
         </button>
         <ng-template #ABC>
-          <button mat-raised-button color="primary" (click)="resultExam()">Submit</button>
+          <button mat-raised-button color="primary" (click)="resultExam()">Hoàn thành</button>
         </ng-template>
       </mat-card-actions>
     </mat-card>
@@ -30,10 +33,12 @@
   <mat-grid-tile>
     <mat-card>
       <mat-card-header>
-        <mat-card-title>Quiz navigation</mat-card-title>
+        <mat-card-title>
+          <span>{{counter | formatTime}}</span>
+        </mat-card-title>
       </mat-card-header>
-      <mat-card-content>
-        <button *ngFor="let question of this.fakeExam; let i = index" mat-raised-button
+      <mat-card-content class="example-button-row">
+        <button *ngFor="let q of questions; let i = index" mat-raised-button
                 (click)="changeQuestion(i)">{{i + 1}}</button>
       </mat-card-content>
     </mat-card>
