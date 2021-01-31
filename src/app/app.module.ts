@@ -38,7 +38,6 @@ import {AssignmentService} from './containers/service/api/assignment.service';
 import {HttpClientModule} from '@angular/common/http';
 import { ResultExamComponent } from './views/result-exam/result-exam.component';
 import {UserService} from './containers/service/user/user.service';
-import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
