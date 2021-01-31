@@ -140,7 +140,6 @@ export class ExamComponent implements OnInit {
     if (this.fakeExam.length > this.index + 1) {
       this.index++;
       this.question = this.fakeExam[this.index];
-      this.checkAnswer();
       this.checkLast();
     }
   }
@@ -149,7 +148,6 @@ export class ExamComponent implements OnInit {
     this.index--;
     if (this.fakeExam[this.index] != null) {
       this.question = this.fakeExam[this.index];
-      this.checkAnswer();
       this.lastQuestion = true;
     } else {
       this.index++;
@@ -159,12 +157,10 @@ export class ExamComponent implements OnInit {
   changeQuestion(id: number): void {
     this.question = this.fakeExam[id];
     this.index = id;
-    this.checkAnswer();
     this.checkLast();
   }
 
   resultExam(): void {
-    this.checkAnswer();
     this.router.navigate(['result-exam']);
   }
 

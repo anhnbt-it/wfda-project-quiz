@@ -12,9 +12,10 @@
         <mat-card-actions>
           <mat-radio-group
             [(ngModel)]="answerTS"
+            (change)="checkAnswer()"
             aria-labelledby="example-radio-group-label"
             class="example-radio-group">
-            <mat-radio-button class="example-radio-button" *ngFor="let answer of this.question.answer"
+            <mat-radio-button [checked]="this.answerList.includes(answer)" class="example-radio-button" *ngFor="let answer of this.question.answer"
                               [value]="answer">
               {{answer.name}}
             </mat-radio-button>
