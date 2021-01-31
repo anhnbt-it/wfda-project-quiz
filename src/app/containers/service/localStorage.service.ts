@@ -24,8 +24,10 @@ export class LocalStorageService {
     }
   }
 
-  delete = (key: string) => {
-    localStorage.removeItem(key);
+  delete = (key: string | null | undefined) => {
+    if (key != null) {
+      localStorage.removeItem(key);
+    }
   }
 
   clearAll = () => {
