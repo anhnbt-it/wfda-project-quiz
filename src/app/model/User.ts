@@ -7,4 +7,7 @@ export class User{
   email?: string;
   image?: string;
   dob?: string;
+  roles?: [{
+    name: string
+  }];
 }

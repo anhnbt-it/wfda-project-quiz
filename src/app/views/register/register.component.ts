@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {User} from '../../model/User';
+import {UserService} from '../../containers/service/user/user.service';
 
 @Component({
   selector: 'app-register',
@@ -21,13 +23,16 @@ export class RegisterComponent implements OnInit {
   });
 
   list?: any[];
-
+  user?: User;
   constructor(
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private userService: UserService
   ) { }
 
   ngOnInit(): void {
+    this.user = new User();
+    console.log(this.user.roles);
     this.myForm = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(3), Validators.pattern('^[a-zA-Z]*[0-9]*$')]],
       password: ['', [Validators.required, Validators.minLength(6)]],
@@ -35,7 +40,7 @@ export class RegisterComponent implements OnInit {
       address: [''],
       email: ['', [Validators.required, Validators.email]],
       image: [''],
-      dob: [''],
+      dob: ['']
     });
   }
 
@@ -44,7 +49,18 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(): void{
-    console.log(this.myForm.value);
+    this.user = this.myForm.value;
+    // @ts-ignore
+    this.user?.roles = [{name: 'user'}];
+    this.save();
+    // console.log(this.user?.roles);
+    console.log(this.user);
+  }
+
+  save(): void{
+    this.userService.createUser(this.user).subscribe(res => {
+      this.user = res.data;
+    });
   }
 
 }
