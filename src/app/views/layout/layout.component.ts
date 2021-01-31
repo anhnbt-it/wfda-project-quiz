@@ -1,7 +1,9 @@
-import { Component, OnDestroy, OnInit, Pipe } from '@angular/core';
+import {Component, Input, OnDestroy, OnInit, Pipe} from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable, Subscription, timer } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import {LocalStorageService} from '../../containers/service/localStorage.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-layout',
@@ -9,9 +11,8 @@ import { map, shareReplay } from 'rxjs/operators';
   styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent implements OnInit, OnDestroy {
-
   title = 'Quiz';
-
+  username: string | null | undefined;
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
       map(result => result.matches),
       shareReplay()
@@ -22,13 +23,11 @@ export class LayoutComponent implements OnInit, OnDestroy {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
+    private localStorageService: LocalStorageService,
+    private router: Router
   ) {}
-
-  logout(): void {
-    // this.authService.logout();
-    console.log('Logout');
-  }
   ngOnInit(): void {
+    this.username = localStorage.key(0);
     this.countDown = timer(0, this.tick).subscribe(() => {
       --this.counter;
       if (this.counter <= 0) {
@@ -37,6 +36,14 @@ export class LayoutComponent implements OnInit, OnDestroy {
       }
     });
   }
+
+  logout(): void {
+    this.localStorageService.delete(this.username);
+    // console.log(this.user);
+    console.log('Logout');
+    this.router.navigate(['']);
+  }
+
   ngOnDestroy(): void {
     this.countDown.unsubscribe();
   }
