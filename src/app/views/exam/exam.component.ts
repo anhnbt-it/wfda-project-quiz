@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Timestamp} from 'rxjs';
 import {Router} from '@angular/router';
 
+
 export interface Exam {
   id: number;
   name: string;
@@ -124,6 +125,7 @@ export class ExamComponent implements OnInit {
   lastQuestion = true;
   answerTS: any = null;
   answerList: any = [];
+  point = 0;
 
   constructor(private router: Router) {
   }
@@ -176,7 +178,19 @@ export class ExamComponent implements OnInit {
         }
         this.answerList.push(this.answerTS);
       }
+      this.checkPoint();
       console.log(this.answerList);
+      console.log(this.point);
     }
+  }
+
+  checkPoint(): void {
+    let answerChecked = 0;
+    for (const a of this.answerList) {
+      if (a.check === true) {
+        answerChecked++;
+      }
+    }
+    this.point = answerChecked;
   }
 }
