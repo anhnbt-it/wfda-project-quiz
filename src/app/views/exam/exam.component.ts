@@ -118,13 +118,13 @@ const DATAFAKE: Exam =
   styleUrls: ['./exam.component.css']
 })
 export class ExamComponent implements OnInit, OnDestroy {
-  favoriteSeason: string | undefined;
   fakeExam = DATAFAKE.questionList;
   questions: any;
   index = 0;
   lastQuestion = true;
   answerTS: any = null;
   answerList: any = [];
+  point = 0;
 
 
   countDown!: Subscription;
@@ -156,7 +156,6 @@ export class ExamComponent implements OnInit, OnDestroy {
     if (this.fakeExam.length > this.index + 1) {
       this.index++;
       this.questions = this.fakeExam[this.index];
-      this.checkAnswer();
       this.checkLast();
     }
   }
@@ -165,7 +164,6 @@ export class ExamComponent implements OnInit, OnDestroy {
     this.index--;
     if (this.fakeExam[this.index] != null) {
       this.questions = this.fakeExam[this.index];
-      this.checkAnswer();
       this.lastQuestion = true;
     } else {
       this.index++;
@@ -175,12 +173,10 @@ export class ExamComponent implements OnInit, OnDestroy {
   changeQuestion(id: number): void {
     this.questions = this.fakeExam[id];
     this.index = id;
-    this.checkAnswer();
     this.checkLast();
   }
 
   resultExam(): void {
-    this.checkAnswer();
     this.router.navigate(['result-exam']);
   }
 
@@ -200,7 +196,19 @@ export class ExamComponent implements OnInit, OnDestroy {
         }
         this.answerList.push(this.answerTS);
       }
+      this.checkPoint();
       console.log(this.answerList);
+      console.log(this.point);
     }
+  }
+
+  checkPoint(): void {
+    let answerChecked = 0;
+    for (const a of this.answerList) {
+      if (a.check === true) {
+        answerChecked++;
+      }
+    }
+    this.point = answerChecked;
   }
 }

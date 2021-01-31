@@ -1,3 +1,4 @@
+<h1>Point: {{point}}</h1>
 <mat-grid-list cols="2" rowHeight="100%">
   <mat-grid-tile>
     <mat-card class="quiz-card"
@@ -12,12 +13,13 @@
         <mat-radio-group
           aria-labelledby="example-radio-group-label"
           class="example-radio-group"
-          [(ngModel)]="favoriteSeason">
-          <mat-radio-button class="example-radio-button" *ngFor="let answer of question.answer" [value]="answer.id">
+          [(ngModel)]="answerTS"
+          (change)="checkAnswer()">
+          <mat-radio-button [checked]="this.answerList.includes(answer)" class="example-radio-button" *ngFor="let answer of question.answer" [value]="answer">
             {{answer.name}}
           </mat-radio-button>
         </mat-radio-group>
-        <div>Your favorite season is: {{favoriteSeason}}</div>
+        <div>Your favorite season is: {{answerTS}}</div>
       </mat-card-content>
       <mat-card-actions class="text-center example-button-row">
         <button *ngIf="!isFirst" mat-raised-button (click)="prevQuestion()">❮ Previous</button>
