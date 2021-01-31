@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { LocalStorageService } from '../localStorage/local-storage.service';
+import { LocalStorageService } from '../localStorage/local-storage.services';
 import { Observable } from 'rxjs';
 
 

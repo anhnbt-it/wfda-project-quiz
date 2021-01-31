@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LayoutComponent } from './views/layout/layout.component';
+import { LayoutComponent } from './components/layout/layout.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -21,17 +21,17 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
-import { ExamComponent } from './views/exam/exam.component';
+import { ExamComponent } from './components/exam/exam.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { LayoutLoginComponent } from './views/layout-login.component';
-import { LoginComponent } from './views/login/login.component';
-import { RegisterComponent } from './views/register/register.component';
-import { AssignmentsHistoryComponent } from './views/assignments-history/assignments-history.component';
-import { AssignmentsDetailComponent } from './views/assignments-detail/assignments-detail.component';
-import { DetailGroupComponent } from './views/detail-group/detail-group.component';
-import { FormatTimePipe } from './containers/pipes/format-time.pipe';
+import { LayoutLoginComponent } from './components/layout-login.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { AssignmentsHistoryComponent } from './components/assignments-history/assignments-history.component';
+import { AssignmentsDetailComponent } from './components/assignments-detail/assignments-detail.component';
+import { DetailGroupComponent } from './components/detail-group/detail-group.component';
+import { FormatTimePipe } from './pipes/format-time.pipe';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { HomeComponent } from './views/home/home.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
